@@ -22,10 +22,10 @@
         <version>1.3.0</version>
     </parent>
     <groupId>org.forgerock.commons</groupId>
-    <artifactId>org.forgerock.json.resource.restlet</artifactId>
+    <artifactId>org.forgerock.json.resource</artifactId>
     <version>1.3.0</version>
-    <name>JSON Resource Restlet integration</name>
-    <description>Provides integration between the JSON Resource and Restlet APIs</description>
+    <name>JSON Resource core</name>
+    <description>JSON resource-oriented core API</description>
     <packaging>bundle</packaging>
     <dependencies>
         <dependency>
@@ -37,38 +37,14 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8</version>
+            <version>6.2</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.restlet.jee</groupId>
-            <artifactId>org.restlet</artifactId>
-            <version>2.0.15</version>
-        </dependency>
-        <dependency>
-            <groupId>org.restlet.jee</groupId>
-            <artifactId>org.restlet.ext.jackson</artifactId>
-            <version>2.0.15</version>
-        </dependency>
-        <dependency>
-            <groupId>org.forgerock.commons</groupId>
-            <artifactId>org.forgerock.util</artifactId>
-            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.forgerock.commons</groupId>
             <artifactId>json-fluent</artifactId>
             <version>1.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.forgerock.commons</groupId>
-            <artifactId>org.forgerock.restlet</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.forgerock.commons</groupId>
-            <artifactId>org.forgerock.json.resource</artifactId>
-            <version>1.0.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <build>
@@ -88,7 +64,7 @@
                 <configuration>
                     <instructions>
                         <Export-Package>
-                            org.forgerock.json.resource.restlet;version=${project.version}
+                            org.forgerock.json.resource;version=${project.version}
                         </Export-Package>
                     </instructions>
                 </configuration>
@@ -112,13 +88,8 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>maven-restlet</id>
-            <name>Public online Restlet repository</name>
-            <url>http://maven.restlet.org</url>
-        </repository>
 <!-- may-be-temporary, based-on our decisions around the content and release of forgerock-parent -->
+    <repositories>
         <repository>
             <id>forgerock-staging-repository</id>
             <name>ForgeRock Release Repository</name>
